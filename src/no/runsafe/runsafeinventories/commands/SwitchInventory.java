@@ -25,7 +25,7 @@ public class SwitchInventory extends PlayerCommand
 		IPlayer target = parameters.getValue("target");
 
 		if (source == null || target == null)
-			return null;
+			return "&cInvalid player(s).";
 
 		RunsafeInventory targetInventory = target.getInventory();
 		RunsafeInventory sourceInventory = source.getInventory();

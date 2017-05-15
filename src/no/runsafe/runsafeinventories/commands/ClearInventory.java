@@ -20,7 +20,7 @@ public class ClearInventory extends ExecutableCommand
 	{
 		IPlayer player = parameters.getValue("player");
 		if (player == null)
-			return null;
+			return "&cInvalid player.";
 		this.history.save(player);
 		player.getInventory().clear();
 		player.updateInventory();

@@ -24,7 +24,7 @@ public class DropItems extends ExecutableCommand
 	{
 		IPlayer player = parameters.getValue("player");
 		if (player == null)
-			return null;
+			return "&cInvalid player.";
 
 		this.dropItems(player);
 		if (executor instanceof IPlayer && executor.equals(player))

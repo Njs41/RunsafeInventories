@@ -23,7 +23,7 @@ public class RestoreInventory extends ExecutableCommand
 	{
 		IPlayer player = parameters.getValue("player");
 		if (player == null)
-			return null;
+			return "&cInvalid player.";
 
 		if (!this.history.restore(player))
 			return "&cThere is no stored restoration data for this players inventory.";
