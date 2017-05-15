@@ -30,6 +30,9 @@ public class SwitchInventory extends PlayerCommand
 		RunsafeInventory targetInventory = target.getInventory();
 		RunsafeInventory sourceInventory = source.getInventory();
 
+		if (sourceInventory == null || targetInventory == null)
+			return "&cInvalid inventory.";
+
 		this.history.save(target);
 		this.history.save(source);
 
