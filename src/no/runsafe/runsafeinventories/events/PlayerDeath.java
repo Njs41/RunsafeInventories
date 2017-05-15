@@ -17,8 +17,12 @@ public class PlayerDeath implements IPlayerDeathEvent
 	public void OnPlayerDeathEvent(RunsafePlayerDeathEvent event)
 	{
 		this.debugger.debugFine("Detected death event for " + event.getEntity().getName());
-		this.inventoryHandler.wipeInventory(event.getEntity());
-		this.inventoryHandler.saveInventory(event.getEntity());
+		// Check if the keep inventory gamerule is off before wiping the player's inventory.
+		if (!event.getEntity().getWorld().getGameRuleValue("keepInventory").equalsIgnoreCase("true"))
+		{
+			this.inventoryHandler.wipeInventory(event.getEntity());
+			this.inventoryHandler.saveInventory(event.getEntity());
+		}
 	}
 
 	private final InventoryHandler inventoryHandler;
