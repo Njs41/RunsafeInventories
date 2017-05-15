@@ -24,7 +24,7 @@ public class ClearInventory extends ExecutableCommand
 		this.history.save(player);
 		player.getInventory().clear();
 		player.updateInventory();
-		if (executor instanceof IPlayer && executor.getName().equals(player.getName()))
+		if (executor instanceof IPlayer && executor.equals(player))
 			return "&2Your inventory has been cleared.";
 		return "&2Inventory for " + player.getPrettyName() + " &2cleared.";
 	}
