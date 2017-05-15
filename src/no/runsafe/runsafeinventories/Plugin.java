@@ -46,7 +46,6 @@ public class Plugin extends RunsafeConfigurablePlugin
 
 		// Events
 		addComponent(InventoryRegionEnter.class);
-		addComponent(InventoryRegionEvent.class);
 		addComponent(InventoryRegionExit.class);
 		addComponent(PlayerTeleport.class);
 		addComponent(PlayerWorldChange.class);
