@@ -93,12 +93,13 @@ public class InventoryHandler implements IPlayerCustomEvent
 
 			if (eventName.equals("inventory.region.enter"))
 			{
-				// ToDo: Load the player's inventory for this region.
+				// Handle entering a region.
+				handlePostWorldChange(player);
 			}
 			else if (eventName.equals("inventory.region.exit"))
 			{
-				// Save the inventory for the region we left.
-				saveInventory(player, data.get("world") + "-" + data.get("region"));
+				// Handle leaving a region.
+				handlePreWorldChange(player);
 			}
 		}
 	}
