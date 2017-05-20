@@ -69,6 +69,20 @@ public class InventoryRegionRepository extends Repository
 		);
 	}
 
+	/**
+	 * Checks if a region is an inventory region.
+	 * @param worldName The world the region is in.
+	 * @param regionName The region to check.
+	 * @return True if the region is a region inventory.
+	 */
+	public boolean isInventoryRegion(String worldName, String regionName)
+	{
+		return database.queryString(
+			"SELECT `regionName` FROM runsafe_inventories_regions WHERE `worldName`=? AND `regionName`=?",
+			worldName, regionName
+		) != null;
+	}
+
 	public HashMap<String, List<String>> getInventoryRegions()
 	{
 		HashMap<String, List<String>> map = new HashMap<String, List<String>>();
