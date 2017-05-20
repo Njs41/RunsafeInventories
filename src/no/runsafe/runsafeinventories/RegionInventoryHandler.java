@@ -80,6 +80,27 @@ public class RegionInventoryHandler implements IConfigurationChanged, IPlayerCus
 	}
 
 	/**
+	 * Sets a region as an inventory region.
+	 * @param worldName Name of the world the region is in.
+	 * @param regionName Name of the region.
+	 */
+	public void setInventoryRegion(String worldName, String regionName)
+	{
+		inventoryRegionRepository.setInventoryRegion(worldName, regionName);
+	}
+
+	/**
+	 * Removes an inventory region.
+	 * Region will still exist, it just won't be an inventory region anymore.
+	 * @param worldName Name of the world the region is in.
+	 * @param regionName Name of the region.
+	 */
+	public void removeInventoryRegion(String worldName, String regionName)
+	{
+		inventoryRegionRepository.removeInventoryRegion(worldName, regionName);
+	}
+
+	/**
 	 * Remove a region from the ignore list for a player, allowing it to trigger events again.
 	 * @param player The player who the event should be pardoned for.
 	 * @param region The region which should no longer be ignored.
